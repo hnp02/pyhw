@@ -26,4 +26,13 @@ def calc(a,b,c='multiply'):
     elif c=='int_divide':
         return a//b
 
-# print(calc(10,0,"divide"));
+def data_type_conversion(a,b):
+    if b=="int":
+        try:
+            return int(a)
+        except:
+            return f"You can't convert {a} into a {b}."
+    elif b=="str":
+        return str(a)
+    elif b=="float":
+        return float(a)
