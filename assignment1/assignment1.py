@@ -36,3 +36,24 @@ def data_type_conversion(a,b):
         return str(a)
     elif b=="float":
         return float(a)
+
+def grade(*args):
+    try:
+        ave= sum(args)/len(args)
+    except: 
+        return "Invalid data was provided."
+    if ave >=90:
+        return "A"
+    elif ave >= 80 and ave <90:
+        return "B"
+    elif ave >= 70 and ave <80:
+        return "C"
+    elif ave >= 60 and ave <70:
+        return "D"
+    elif ave <60:
+        return "F"
+
+
+
+
+# def titleize
