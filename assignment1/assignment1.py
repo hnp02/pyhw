@@ -59,5 +59,12 @@ def repeat(text, count):
         out += text
     return out
 
-
+def student_scores(choice, **kwargs):
+    if choice== "best":
+        name= max(kwargs, key= kwargs.get)
+        return name
+    elif choice== 'mean':
+        mean= mean = sum(kwargs.values()) / len(kwargs)
+        return mean
+    
 # def titleize
