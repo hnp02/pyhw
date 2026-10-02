@@ -53,7 +53,11 @@ def grade(*args):
     elif ave <60:
         return "F"
 
-
+def repeat(text, count):
+    out= ""
+    for i in range(count):
+        out += text
+    return out
 
 
 # def titleize
