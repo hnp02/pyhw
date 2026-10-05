@@ -78,7 +78,11 @@ def titleize(text):
             result.append(word.lower())
     return " ".join(result)
 
-
-
-
-print(enumerate('I love you'))
+def hangman(secret, guess):
+    result = ""
+    for letter in secret:
+        if letter in guess:
+            result += letter
+        else:
+            result += "_"
+    return result
