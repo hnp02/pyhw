@@ -25,6 +25,8 @@ def calc(a,b,c='multiply'):
         return a%b
     elif c=='int_divide':
         return a//b
+    elif c=='power':
+        return a**b
 
 def data_type_conversion(a,b):
     if b=="int":
