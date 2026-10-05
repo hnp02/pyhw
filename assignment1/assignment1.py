@@ -86,3 +86,17 @@ def hangman(secret, guess):
         else:
             result += "_"
     return result
+
+def pig_latin(text):
+    vowels = "aeiou"
+    words = []
+    for word in text.split():
+        i = 0
+        while i < len(word) and word[i] not in vowels:
+            if word[i] == "q" and word[i + 1:i + 2] == "u":
+                i += 2
+            else:
+                i += 1
+        words.append(word[i:] + word[:i] + "ay")
+    return " ".join(words)
+
