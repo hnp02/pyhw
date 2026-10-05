@@ -67,4 +67,18 @@ def student_scores(choice, **kwargs):
         mean= mean = sum(kwargs.values()) / len(kwargs)
         return mean
     
-# def titleize
+def titleize(text):
+    little_words = ["a", "on", "an", "the", "of", "and", "is", "in"]
+    word = text.split()
+    result = []
+    for i, word in enumerate(word):
+        if i == 0 or i == len(word) - 1 or word.lower() not in little_words:
+            result.append(word.capitalize())
+        else:
+            result.append(word.lower())
+    return " ".join(result)
+
+
+
+
+print(enumerate('I love you'))
