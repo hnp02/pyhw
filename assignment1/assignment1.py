@@ -4,7 +4,7 @@ def hello():
     return a
 
 def greet(name):
-    return "Hello, " + name + '!'
+    return f"Hello, {name}!"
 
 def calc(a,b,c='multiply'):
     if c=='add':
