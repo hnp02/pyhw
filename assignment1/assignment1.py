@@ -7,26 +7,27 @@ def greet(name):
     return f"Hello, {name}!"
 
 def calc(a,b,c='multiply'):
-    if c=='add':
-        return a+b
-    elif c=="subtract":
-        return a-b
-    elif c=="multiply":
-        try:
+    try:
+        if c=='add':
+            return a+b
+        elif c=="subtract":
+            return a-b
+        elif c=="multiply":
             return a*b
-        except:
-            return "You can't multiply those values!"
-    elif c=='divide':
-        try:
+        elif c=='divide':
             return a/b
-        except:
-            return "You can't divide by 0!"
-    elif c=='modulo':
-        return a%b
-    elif c=='int_divide':
-        return a//b
-    elif c=='power':
-        return a**b
+        elif c=='modulo':
+            return a%b
+        elif c=='int_divide':
+            return a//b
+        elif c=='power':
+            return a**b
+    except TypeError:
+        return "You can't multiply those values!"
+    except ZeroDivisionError:
+        return "You can't divide by 0!"
+            
+        
 
 def data_type_conversion(a,b):
     if b=="int":
