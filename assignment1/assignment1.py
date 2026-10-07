@@ -30,15 +30,16 @@ def calc(a,b,c='multiply'):
         
 
 def data_type_conversion(a,b):
-    if b=="int":
-        try:
+    try:
+        if b=="int":
             return int(a)
-        except:
-            return f"You can't convert {a} into a {b}."
-    elif b=="str":
-        return str(a)
-    elif b=="float":
-        return float(a)
+        elif b=="str":
+            return str(a)
+        elif b=="float":
+            return float(a)
+    except ValueError:
+        return f"You can't convert {a} into a {b}."
+
 
 def grade(*args):
     try:
