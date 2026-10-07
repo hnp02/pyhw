@@ -67,15 +67,15 @@ def student_scores(choice, **kwargs):
         name= max(kwargs, key= kwargs.get)
         return name
     elif choice== 'mean':
-        mean= mean = sum(kwargs.values()) / len(kwargs)
+        mean= sum(kwargs.values()) / len(kwargs)
         return mean
     
 def titleize(text):
     little_words = ["a", "on", "an", "the", "of", "and", "is", "in"]
-    word = text.split()
+    words = text.split()
     result = []
-    for i, word in enumerate(word):
-        if i == 0 or i == len(word) - 1 or word.lower() not in little_words:
+    for i, word in enumerate(words):
+        if i == 0 or i == len(words) - 1 or word.lower() not in little_words:
             result.append(word.capitalize())
         else:
             result.append(word.lower())
