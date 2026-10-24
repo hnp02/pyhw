@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 
 # Task 1: Create a DataFrame from a dictionary
@@ -49,3 +50,36 @@ print(employee_shape)
 
 # Task 3: Use the info() method
 more_employees.info()
+
+# Task 4: Data cleaning
+dirty_data = pd.read_csv('dirty_data.csv')
+print(dirty_data)
+
+clean_data = dirty_data.copy()
+
+# Remove duplicate rows
+clean_data = clean_data.drop_duplicates()
+print(clean_data)
+
+# Convert Age to numeric, non-numeric values become NaN
+clean_data['Age'] = pd.to_numeric(clean_data['Age'], errors='coerce')
+print(clean_data)
+
+# Convert Salary to numeric, placeholders become NaN
+clean_data['Salary'] = clean_data['Salary'].str.strip().replace(['unknown', 'n/a'], np.nan)
+clean_data['Salary'] = pd.to_numeric(clean_data['Salary'], errors='coerce')
+print(clean_data)
+
+# Fill missing values: Age with the mean, Salary with the median
+clean_data['Age'] = clean_data['Age'].fillna(clean_data['Age'].mean())
+clean_data['Salary'] = clean_data['Salary'].fillna(clean_data['Salary'].median())
+print(clean_data)
+
+# Convert Hire Date to datetime, the dates come in mixed formats
+clean_data['Hire Date'] = pd.to_datetime(clean_data['Hire Date'].str.strip(), format='mixed')
+print(clean_data)
+
+# Strip whitespace and standardize Name and Department as uppercase
+clean_data['Name'] = clean_data['Name'].str.strip().str.upper()
+clean_data['Department'] = clean_data['Department'].str.strip().str.upper()
+print(clean_data)
