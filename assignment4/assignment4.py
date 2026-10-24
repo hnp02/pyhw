@@ -34,3 +34,18 @@ print(json_employees)
 # Task 2: Combine DataFrames
 more_employees = pd.concat([task2_employees, json_employees], ignore_index=True)
 print(more_employees)
+
+# Task 3: Use the head() method
+first_three = more_employees.head(3)
+print(first_three)
+
+# Task 3: Use the tail() method
+last_two = more_employees.tail(2)
+print(last_two)
+
+# Task 3: Get the shape of a DataFrame
+employee_shape = more_employees.shape
+print(employee_shape)
+
+# Task 3: Use the info() method
+more_employees.info()
